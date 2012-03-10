@@ -29,6 +29,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -37,9 +38,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    devise (2.0.4)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -54,6 +61,17 @@ GEM
     mime-types (1.17.2)
     multi_json (1.1.0)
     mysql2 (0.3.11)
+    oauth (0.4.5)
+    omniauth (1.0.3)
+      hashie (~> 1.2)
+      rack
+    omniauth-netflix (0.1.0)
+      multi_json (~> 1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    orm_adapter (0.0.6)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -70,6 +88,8 @@ GEM
       activesupport (= 3.2.2)
       bundler (~> 1.0)
       railties (= 3.2.2)
+    rails_config (0.2.5)
+      activesupport (>= 3.0)
     railties (3.2.2)
       actionpack (= 3.2.2)
       activesupport (= 3.2.2)
@@ -98,14 +118,20 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  devise
   jquery-rails
   mysql2
+  omniauth
+  omniauth-netflix
   rails (= 3.2.2)
+  rails_config
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

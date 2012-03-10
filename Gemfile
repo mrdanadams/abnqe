@@ -5,7 +5,11 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'rails_config'
 gem 'mysql2'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-netflix'
 
 
 # Gems used only for assets and not required
