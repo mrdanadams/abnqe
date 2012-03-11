@@ -1,3 +1,14 @@
 You are a member!
 
 <%= link_to t('.log_out'), destroy_user_session_url, method: :delete %>
+
+<div class="items">
+	<% @queue['queue_item'].each do |item| %>
+	<div class="item">
+		<h2><%= item['title']['regular'] %></h2>
+		<%= tag 'img', class: 'cover', src: item['box_art']['large'] %>
+	</div>
+
+	<% end %>
+
+</div>

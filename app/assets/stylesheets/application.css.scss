@@ -12,3 +12,14 @@
  *= require_tree .
 */
 
+body {
+	background-color: #272727;
+}
+
+.items {
+	.item {
+		float: left; margin-right: 10px;
+		h2 { display: none; }
+	}
+	.cover { box-shadow: 2px 2px 5px #272727; }
+}
