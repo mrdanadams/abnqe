@@ -12,11 +12,15 @@ class HomeController < ApplicationController
       # TODO get the link for the queues from the users account
       # TODO change page size to something bigger
       # TODO order by date added by default
-      response = access_token.get("http://api.netflix.com/users/#{current_user.netflix_id}/queues/instant?output=json").body
+      sort = 'date_added'
+      page = if !params['page'].blank? then params['page'].to_i else 1 end
+      page_size = 500
+      start = (page - 1) * page_size
+      response = access_token.get("http://api.netflix.com/users/#{current_user.netflix_id}/queues/instant?output=json&sort=#{sort}&start_index=#{start}&max_results=#{page_size}").body
       @queue = MultiJson.decode(response)['queue']
       render 'member_index'
     end
 
-
   end
+
 end

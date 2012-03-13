@@ -1,12 +1,12 @@
-You are a member!
-
 <%= link_to t('.log_out'), destroy_user_session_url, method: :delete %>
 
 <div class="items">
 	<% @queue['queue_item'].each do |item| %>
 	<div class="item">
 		<h2><%= item['title']['regular'] %></h2>
-		<%= tag 'img', class: 'cover', src: item['box_art']['large'] %>
+		<%= link_to "http://movies.netflix.com/CommunityAPIPlay?devKey=#{u Settings.netflix.api_key}&movieid=#{u item['id']}&nbb=y", target: '_blank' do %>
+			<%= tag 'img', class: 'cover', src: item['box_art']['large'] %>
+		<% end %>
 	</div>
 
 	<% end %>
