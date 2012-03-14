@@ -1,12 +1,29 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner"><div class="container">
+    <a class="brand" href="/"><%= t('site_name') %></a>
+
+    <form class="navbar-search">
+      <input type="text" class="input-medium search-query" id="q" placeholder="Search movie titles" />
+      <i class="icon-search icon-black"></i>
+      <i class="icon-search icon-white"></i>
+    </form>
+
+    <ul class="nav pull-right">
+    <% if user_signed_in? %>
+      <li><%= link_to t('.log_out'), destroy_user_session_url, method: :delete %></li><% end %>
+    </ul>
+  </div></div>
+</div>
+
 <div class="items">
 	<% @queue['queue_item'].each do |item| %>
-	<div class="item">
+  <%= content_tag :div, :class => "item", :'data-title' => item['title']['regular'] do %>
 		<h2><%= item['title']['regular'] %></h2>
 		<%= link_to "http://movies.netflix.com/CommunityAPIPlay?devKey=#{u Settings.netflix.api_key}&movieid=#{u item['id']}&nbb=y", target: '_blank' do %>
 			<%= tag 'img', class: 'cover', src: item['box_art']['large'] %>
 		<% end %>
-	</div>
+	<% end # div %>
+	<% end # each %>
 
-	<% end %>
-
+  <div class="no-results"><%= t(".no_results") %></div>
 </div>

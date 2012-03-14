@@ -5,6 +5,10 @@ en:
   hello: "Hello world"
   site_name: xilften
 
+  home:
+    member_index:
+      no_results: Oh no! No titles matched. You'll just have to try again.
+  
   layouts:
     application:
       meta:
