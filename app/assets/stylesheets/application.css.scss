@@ -9,17 +9,27 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+//= require_tree ../../../vendor/assets/stylesheets
  *= require_tree .
 */
 
+@import "compass/utilities";
+
 body {
-	background-color: #272727;
+	background-color: #272727 !important;
+	padding-top: 40px;
 }
 
+.navbar .container { width: auto !important; margin: 0 1em; }
+
 .items {
+	@include clearfix;
+  margin: 0 auto;
+
 	.item {
-		float: left; margin-right: 10px;
+		float: left; margin: 10px 10px 0 0;
 		h2 { display: none; }
 	}
 	.cover { box-shadow: 2px 2px 5px #272727; }
 }
+
