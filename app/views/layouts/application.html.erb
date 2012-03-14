@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= tag :meta, name:'description', content:t('.meta.description') %>
+  <%= tag :meta, name:'keywords', content:t('.meta.keywords') %>
 </head>
 <body>
 

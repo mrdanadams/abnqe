@@ -4,3 +4,9 @@
 en:
   hello: "Hello world"
   site_name: xilften
+
+  layouts:
+    application:
+      meta:
+        description: A visual interface for browsing and navigating the contents of your Netflix instant watch queue.
+        keywords: netflix queue, visual netflix queue, browse, search
