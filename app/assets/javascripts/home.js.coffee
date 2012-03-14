@@ -1,9 +1,10 @@
 $ ->
   container = $('.items')
   return if !container.length
-  
-  coverWidth = 110
-  coverMargin = 10
+
+  item = $('.item:first')
+  coverWidth = +item.css('width').replace(/[^\d]+/, '')
+  coverMargin = +item.css('margin-right').replace(/[^\d]+/, '')
 
   resize = ->
     bodyWidth = $('body').width()
