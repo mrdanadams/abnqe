@@ -1,3 +1,28 @@
-<p><%= t('.intro') %></p>
-<p><%= t('.login_instructions') %></p>
-<p><%= link_to t('.log_in'), user_omniauth_authorize_path(:netflix) %></p>
+<div class="container" id="publicHome">
+
+<div class="row" id="productSummary"><div class="span12">
+  <h1>abnqe</h1>
+  <h2>A Better Netflix Queue Experience</h2>
+</div></div>
+
+<div class="row info login"><div class="span12">
+  <%= image_tag 'netflix.jpg', alt: 'Netflix' %>
+  <h3>Log in to get started</h3>
+  <p>Free and easy. Click the button to log in with your Netflix account and get started.</p>
+  <p><%= link_to t('.log_in'), user_omniauth_authorize_path(:netflix), class:'btn btn-large btn-danger' %></p>
+</div></div>
+
+<div class="row info"><div class="span12">
+  <%= image_tag 'queue.jpg', alt: 'Visual Netflix instant watch queue' %>
+  <h3>A Visual Instant Queue</h3>
+  <p>Browse your queue in a way that makes sense: visually.</p>
+  <p>Looks great on both laptops and TVs.</p>
+</div></div>
+
+<div class="row info"><div class="span12">
+  <%= image_tag 'search.jpg', alt: 'Search and filter your queue' %>
+  <h3>Search Your Queue</h3>
+  <p>Instantly filter your queue to find titles quickly.</p>
+</div></div>
+
+</div>

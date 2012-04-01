@@ -3,14 +3,19 @@
 
 en:
   hello: "Hello world"
-  site_name: xilften
+  site_name: abnqe
 
   home:
     member_index:
       no_results: Oh no! No titles matched. You'll just have to try again.
-  
+      log_out: Log out
+
+    index:
+      log_in: Log in with your Netflix account
+
+
   layouts:
     application:
       meta:
-        description: A visual interface for browsing and navigating the contents of your Netflix instant watch queue.
+        description: A better Netflix queue experience. Visually browsing and search your Netflix instant watch queue.
         keywords: netflix queue, visual netflix queue, browse, search

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Xilften &ndash; A non-terrible Netflix experience for the browser</title>
+  <title>abnqe &ndash; A better Netflix queue experience</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,12 +11,11 @@
 </head>
 <body>
 
-<% if notice %><p class="notice"><%= notice %></p><% end %>
-<% if alert %><p class="alert"><%= alert %></p><% end %>
-
 <%= yield %>
 
-<footer>&copy; <%= Time.now.year %> Made by <a href="http://mrdanadams.com" target="_blank">Dan Adams</a> mostly for fun. Movie content <a href="http://www.netflix.com" target="_blank">delivered by Netflix</a>.</footer>
+<footer id="footer">
+  &copy; <%= Time.now.year %> Made by <a href="http://mrdanadams.com" target="_blank">Dan Adams</a> mostly for fun. Movie content <a href="http://www.netflix.com" target="_blank">delivered by Netflix</a>.
+</footer>
 
 </body>
 </html>

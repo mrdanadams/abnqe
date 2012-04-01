@@ -8,32 +8,82 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
 //= require_tree ../../../vendor/assets/stylesheets
  *= require_tree .
+ *= require_self
 */
 
 @import "compass/utilities";
 @import "compass/css3";
+@import "_pems";
+
+@import url(http://fonts.googleapis.com/css?family=Sansita+One);
+
+@mixin typeface { font-family: ‘Metrophobic’, Arial, serif; font-weight: 400;  }
+@mixin helvetica { font-family: Verdana, Arial, sans-serif; }
 
 $imageWidth: 110px;
+$topMargin: 40;
 
 body {
+  font-size: #{$baseFontSize}px;
 	background-color: #272727 !important;
-	padding-top: 40px;
+	padding-top: $topMargin * 1px;
+  color: white;
 }
 
 .navbar {
-  position: relative;
-  .container { width: auto !important; margin: 0 1em; }
+  .container { width: auto !important; margin: 0 pem(24); }
 
-  .search-query { padding-right: 25px !important; }
-  .icon-search { position: absolute; right: 10px; top: 6px; }
+  form { position: relative; width: pem(461); max-width: 50%; margin: pem(6) auto; display: block; float: none;}
+  .search-query { padding-right: 25px !important; width: 100%; }
+  .icon-search { position: absolute; right: -25px; top: 6px; }
   .icon-black { display: none; }
   input:focus ~ .icon-white { display: none; }
   input:focus ~ .icon-black { display: inline-block; }
+
+  .brand { @include typeface; }
+
+  .nav { font-size: pem(12); }
 }
 
+#footer { text-align: center; margin: pem(24) 0; }
+
+
+h1, h2, h3, h4, h5, h6 { @include typeface; line-height: 1em; }
+
+#publicHome {
+  @include helvetica;
+
+  .info {
+    margin-bottom: pem(24);
+
+    h3 { font-size: pem(36); margin-bottom: .5em; }
+    img {
+      float: left; margin: 0 0 pem(24) 0;
+      @include box-shadow(pem(3) pem(3) pem(12) #121212);
+      border: pem(2) solid #fff * .8;
+      @include border-radius(pem(3));
+    }
+    p { font-size: pem(18); line-height: 1em; @include text-shadow(0 0 .1em black); }
+  }
+  .info:nth-child(odd) img { float: left; margin-right: pem(24); };
+  .info:nth-child(even) img { float: right; margin-left: pem(24); };
+
+  h1, h2, h3 { @include text-shadow(0 0 .1em black); }
+
+  a.btn { margin-top: pem(16); }
+}
+
+#productSummary {
+  margin-top: pem($topMargin * -1 + 24);
+  margin-bottom: pem(24);
+
+  h1, h2 { display: block; text-align: center; }
+
+  h1 { font-size: pem(136.688); }
+  h2 { font-size: pem(27); text-transform: lowercase; margin: 1em 0;}
+}
 
 .items {
 	@include clearfix;

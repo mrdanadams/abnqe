@@ -2,22 +2,27 @@
   <div class="navbar-inner"><div class="container">
     <a class="brand" href="/"><%= t('site_name') %></a>
 
-    <form class="navbar-search">
-      <input type="text" class="input-medium search-query" id="q" placeholder="Search movie titles" autocomplete="off" />
-      <i class="icon-search icon-black"></i>
-      <i class="icon-search icon-white"></i>
-    </form>
-
     <ul class="nav pull-right">
     <% if user_signed_in? %>
       <li><%= link_to t('.log_out'), destroy_user_session_url, method: :delete %></li><% end %>
     </ul>
+
+    <form class="navbar-search">
+      <input type="text" class="search-query" id="q" placeholder="Search titles..." autocomplete="off" />
+      <i class="icon-search icon-black"></i>
+      <i class="icon-search icon-white"></i>
+    </form>
   </div></div>
 </div>
 
+<div class="container"><div class="row"><div class="span12">
+<% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+<% if alert %><p class="alert alert-error"><%= alert %></p><% end %>
+</div></div></div>
+
 <div class="items">
 	<% @queue['queue_item'].each do |item| %>
-  <%= content_tag :div, :class => "item", :'data-title' => item['title']['regular'] do %>
+  <%= content_tag :div, :class => "item", :'data-title' => item['title']['regular'], :'data-rating' => item['average_rating'] do %>
 		<h2><%= item['title']['regular'] %></h2>
 		<%= link_to "http://movies.netflix.com/CommunityAPIPlay?devKey=#{u Settings.netflix.api_key}&movieid=#{u item['id']}&nbb=y", target: '_blank' do %>
 			<%= tag 'img', class: 'cover', src: item['box_art']['large'] %>
