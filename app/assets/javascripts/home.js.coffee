@@ -43,3 +43,5 @@ $ ->
     if !found
       container.addClass 'filtered-no-results'
 
+  # cancel submit events
+  $('.navbar form').bind 'submit', -> false
