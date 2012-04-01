@@ -100,16 +100,20 @@ h1, h2, h3, h4, h5, h6 { @include typeface; line-height: 1em; }
 
   .no-results {
     display: none;
-    margin: 2em auto;
-    font-size: 24px;
-    border: 2px dashed #555;
-    padding: 2em;
-    color: #ccc;
-    @include text-shadow(#777 1px 1px 0px);
-    width: 400px;
-    max-width: 80%;
+    margin: pem(24) auto;
+    /* border: pem(2) dashed #555; */
+    padding: pem(24);
+    @include text-shadow(#777 pem(1) pem(1) 0px);
+    width: pem(692); max-width: 80%;
     text-align: center;
-    line-height: 1.25em;
+
+    span {
+      font-size: pem(23);
+      @include typeface;
+      color: white;
+      line-height: 1.25em;
+    }
+    
   }
 
   &.filtered-no-results {
