@@ -80,6 +80,7 @@ GEM
       oauth
       omniauth (~> 1.0)
     orm_adapter (0.0.6)
+    pg (0.13.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -140,6 +141,7 @@ DEPENDENCIES
   mysql2
   omniauth
   omniauth-netflix
+  pg
   rails (= 3.2.2)
   rails_config
   sass-rails (~> 3.2.3)
