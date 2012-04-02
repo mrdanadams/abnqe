@@ -67,12 +67,17 @@ h1, h2, h3, h4, h5, h6 { @include typeface; line-height: 1em; }
     }
     p { font-size: pem(18); line-height: 1em; @include text-shadow(0 0 .1em black); }
   }
-  .info:nth-child(odd) img { float: left; margin-right: pem(24); };
-  .info:nth-child(even) img { float: right; margin-left: pem(24); };
+  .info:nth-child(even) img { float: left; margin-right: pem(24); };
+  .info:nth-child(odd) img { float: right; margin-left: pem(24); };
 
   h1, h2, h3 { @include text-shadow(0 0 .1em black); }
 
   a.btn { margin-top: pem(16); }
+
+  .sharing {
+    margin-bottom: pem(16);
+    .addthis_toolbox { float: none; margin: 0 auto;}
+  }
 }
 
 #productSummary {
